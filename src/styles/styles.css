@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&family=Poppins:wght@400;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle-one {
+  box-sizing: border-box;
+  position: fixed;
+  width: 879px;
+  height: 879px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #e3e3e3;
+  border-radius: 50%;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fade-in 1.5s linear forwards 400ms;
+}
+
+.circle-one h3 {
+  font-size: 1.353rem;
+  font-size: clamp(1.353rem, 1.3476rem + 0.026999999999999913vw, 1.38rem);
+  margin-bottom: 2rem;
+  background-image: url(../assets/portfolio-image.png);
+  color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px;
+}
+
+.circle-one h1 {
+  font-size: 1.4875rem;
+  font-size: clamp(
+    1.4875rem,
+    1.2550000000000001rem + 1.1624999999999999vw,
+    2.65rem
+  );
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 1.4206;
+  margin-bottom: 1rem;
+}
+
+.circle-one p {
+  font-size: 0.7788rem;
+  font-size: clamp(0.7788rem, 0.65856rem + 0.6011999999999998vw, 1.38rem);
+  margin-bottom: 2rem;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.0579;
+  color: #000000;
+  opacity: 0.6;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.show-projects {
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 194px;
+  height: 73px;
+  cursor: pointer;
+  color: white;
+  background-color: #252a2e;
+  border: none;
+  border-radius: 8px;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 53px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.shiny {
+  position: absolute;
+  width: 100px;
+  height: 400px;
+  top: -300px;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: rotate(45deg);
+  transition: 450ms;
+}
+
+.show-projects:hover .shiny {
+  top: -30px;
+  left: 120px;
+}
+
+.show-projects a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.circle-two {
+  box-sizing: border-box;
+  position: fixed;
+  width: 1373px;
+  height: 1373px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #e3e3e3;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fade-in 1.5s linear forwards 400ms;
+}
+
+.circle-three {
+  box-sizing: border-box;
+  position: fixed;
+  width: 1935px;
+  height: 1935px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #e3e3e3;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fade-in 1s linear forwards 400ms;
+}
+
+br.responsive {
+  display: none;
+}
+
+img.baby-face {
+  position: fixed;
+  top: 11%;
+  left: -18.2%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 50%;
+}
+
+img.dollar-sign {
+  position: fixed;
+  top: 96%;
+  left: 113.5%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 50%;
+}
+
+a.linkedin-draw {
+  display: none;
+}
+
+a.linkedin-icon {
+  position: fixed;
+  top: 21.4%;
+  left: 91.2%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  background-image: url("https://www.linkedin.com/in/renato-guedes-7a7aba116/");
+}
+
+.experience-details {
+  background-image: url(../assets/details-image.png);
+  position: fixed;
+  top: 70%;
+  left: 80.9%;
+  transform: translate(-50%, -50%);
+  transform: scale(0);
+  width: 272px;
+  height: 110.28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 500ms;
+}
+
+.experience-details.active {
+  transform: scale(1);
+}
+
+.experience-details h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: black;
+  margin-bottom: 6px;
+}
+
+.experience-details p {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  color: black;
+  opacity: 0.6;
+}
+
+.placeholders {
+  display: none;
+}
+
+.transition-fade {
+  opacity: 1;
+  transition: 300ms;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media all and (max-width: 1100px) {
+  body {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .circle-one {
+    width: 535.85px;
+    height: 535.85px;
+    border: 1.21923px solid #e3e3e3;
+  }
+
+  .circle-one h3 {
+    font-size: 1.353rem;
+  }
+
+  .circle-one h1 {
+    font-size: 1.4875rem;
+    line-height: 30px;
+  }
+
+  .circle-one p {
+    font-size: 0.7788rem;
+    line-height: 23px;
+  }
+
+  .circle-two {
+    width: 837px;
+    height: 837px;
+    border: 1.21923px solid #e3e3e3;
+  }
+
+  .circle-three {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  br.responsive {
+    display: inline-block;
+  }
+
+  br.break-line-desktop {
+    display: none;
+  }
+
+  div.show-projects {
+    width: 110px;
+    height: 43px;
+    font-size: 9.06511px;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+  }
+
+  img.baby-face {
+    top: 99.8%;
+    left: 40.5%;
+    background-color: white;
+  }
+
+  img.dollar-sign {
+    top: 99.8%;
+    left: 50.3%;
+    background-color: white;
+  }
+
+  a.linkedin-draw {
+    display: inline;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    top: 100.1%;
+    left: 59.5%;
+  }
+
+  a.linkedin-icon {
+    display: none;
+  }
+
+  .experience-details {
+    display: none;
+  }
+}

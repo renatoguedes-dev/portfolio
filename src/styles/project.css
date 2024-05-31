@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&family=Poppins:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+    --edge-color-one: hsla(324, 70%, 63%, 0.5);
+    --edge-color-two: hsla(222, 73%, 69%, 0.5);
+    --edge-color-three: hsla(251, 100%, 82%, 0.5);
+    --edge-color-four: hsla(194, 70%, 63%, 0.5);
+    --edge-color-five: hsla(47, 78%, 61%, 0.5);
+    --initial-delay-card-animation: 600ms;
+    --animation-card-duration: 600ms;
+    /* --animation-card-two: calc(var(--initial-delay-card-animation) * 2);
+    --animation-card-three: calc(var(--initial-delay-card-animation) * 3);
+    --animation-card-four: calc(var(--initial-delay-card-animation) * 4);
+    --animation-card-five: calc(var(--initial-delay-card-animation) * 5);
+    --animation-card-six: calc(var(--initial-delay-card-animation) * 6);
+    --animation-card-seven: calc(var(--initial-delay-card-animation) * 7);
+    --animation-card-eight: calc(var(--initial-delay-card-animation) * 8);
+    --animation-card-nine: calc(var(--initial-delay-card-animation) * 9);
+    --animation-card-ten: calc(var(--initial-delay-card-animation) * 10);
+    --animation-card-eleven: calc(var(--initial-delay-card-animation) * 11);
+    --animation-card-twelve: calc(var(--initial-delay-card-animation) * 12); */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+}
+
+.my-projects {
+    display: none;
+}
+
+.close-cards {
+    font-family: "Nunito", sans-serif;
+    margin-left: 3rem;
+    position: fixed;
+    z-index: 10;
+    left: -2%;
+    top: -2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+
+.close-projects {
+    opacity: 0;
+    animation: fade-in 1.5s linear forwards 400ms;
+}
+
+.swiper {
+    height: 100%;
+    width: 100%;
+}
+
+div.swiper-slide {
+    height: 100%;
+    padding: 3rem 0;
+    /* max-width: 600px; */
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+div.swiper-slide:first-of-type {
+    margin-left: 3rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 597px;
+    /* max-width: 600px; */
+    min-height: 95%;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    margin: 2rem 0;
+    transform: translateX(400%);
+    cursor: grab;
+}
+
+.cards:active {
+    cursor: grabbing;
+}
+
+.cards-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    background-color: hsla(0, 0%, 10%, 0.8);
+    color: white;
+    padding: 1.5rem;
+}
+
+div.cards:nth-child(3n - 1) {
+    box-shadow: 5px 5px 10px 5px var(--edge-color-three),
+        5px 0px 10px 5px var(--edge-color-five),
+        0 5px 5px 5px var(--edge-color-two);
+}
+
+div.cards:nth-child(3n) {
+    box-shadow: 5px 5px 10px 5px var(--edge-color-three),
+        5px 0px 10px 5px var(--edge-color-five),
+        0 5px 5px 5px var(--edge-color-two);
+}
+
+div.cards:nth-child(3n + 1) {
+    box-shadow: 5px 5px 10px 5px var(--edge-color-three),
+        5px 0px 10px 5px var(--edge-color-five),
+        0 5px 5px 5px var(--edge-color-two);
+}
+
+.cards h2 {
+    font-size: 1.4875rem;
+    font-size: clamp(
+        1.4875rem,
+        1.2550000000000001rem + 1.1624999999999999vw,
+        2.65rem
+    );
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 1.4206;
+}
+
+.cards p {
+    font-size: 0.7788rem;
+    font-size: clamp(0.7788rem, 0.65856rem + 0.6011999999999998vw, 1.38rem);
+    margin-bottom: 2rem;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.0579;
+    opacity: 0.9;
+}
+
+.open-project-btn {
+    width: 194px;
+    height: 73px;
+    cursor: pointer;
+    color: white;
+    background-color: #252a2e;
+    border: none;
+    border-radius: 8px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 53px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.open-project-btn a,
+.close-cards a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.shiny-project {
+  position: absolute;
+  width: 100px;
+  height: 400px;
+  top: -300px;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: rotate(45deg);
+  transition: 450ms;
+}
+
+.open-project-btn:hover .shiny-project {
+  top: -30px;
+  left: 120px;
+}
+
+.project {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+    );
+    background-size: cover;
+    animation: right-to-left var(--animation-card-duration) ease-in forwards;
+    animation-delay: calc(
+        var(--initial-delay-card-animation) * var(--project-index)
+    );
+    user-select: none;
+}
+
+.weather-app {
+  background-image: url(../assets/projects/project-weather-app.png);
+}
+
+.todo-list {
+    background-image: url(../assets/projects/project-todo-list.png);
+}
+
+.tic-tac-toe {
+    background-image: url(../assets/projects/project-tic-tac-toe.png);
+}
+
+.landing-page {
+    background-image: url(../assets/projects/project-landing-page.png);
+}
+
+.sign-up-form {
+    background-image: url(../assets/projects/project-sign-up-form.png);
+}
+
+.restaurant-page {
+    background-image: url(../assets/projects/project-restaurant-page.png);
+}
+
+.calculator {
+    background-image: url(../assets/projects/project-calculator.png);
+}
+
+.admin-dashboard {
+    background-image: url(../assets/projects/project-admin-dashboard.png);
+}
+
+.library {
+    background-image: url(../assets/projects/project-library.png);
+}
+
+.etch-a-sketch {
+    background-image: url(../assets/projects/project-etch-a-sketch.png);
+}
+
+.rock-paper-scissors {
+    background-image: url(../assets/projects/project-rock-paper-scissors.png);
+}
+
+@keyframes right-to-left {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media all and (max-width: 650px) {
+    body {
+        position: relative;
+    }
+
+    div.swiper-slide {
+        padding: 3rem 1.2rem 0;
+    }
+
+    div.swiper-slide:first-of-type {
+        margin-left: 0;
+    }
+
+    .cards {
+        min-width: 300px;
+        min-height: 450px;
+        max-height: 650px;
+        margin: 3.5rem 0 0 0;
+        transform: none;
+        animation: fade-in 1.5s linear forwards 400ms;
+        flex-grow: 1;
+    }
+
+    .my-projects {
+        display: inline-flex;
+        position: absolute;
+        top: 4%;
+        left: 35%;
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-size: 23px;
+    }
+
+    .close-cards {
+        right: -75%;
+        font-size: 30px;
+        top: 3%;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
